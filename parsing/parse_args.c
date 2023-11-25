@@ -6,38 +6,49 @@
 /*   By: pgrossma <pgrossma@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 17:45:21 by pgrossma          #+#    #+#             */
-/*   Updated: 2023/11/25 19:10:24 by pgrossma         ###   ########.fr       */
+/*   Updated: 2023/11/25 19:39:14 by pgrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parse_args.h"
 
-int	ft_numlen(int n)
+int	ft_numlen(char *str)
 {
 	int	count;
 
 	count = 0;
-	if (n == -2147483648)
-		return (11);
-	if (n < 0)
+	if (*str == '-' || *str == '+')
 	{
+		str++;
 		count++;
-		n = -n;
 	}
-	if (n == 0)
-		count++;
-	while (n > 0)
+	while (ft_isdigit(*str))
 	{
-		n = n / 10;
 		count++;
+		str++;
 	}
 	return (count);
 }
 
+void	ft_add_nbr(t_list **stack_a, char *str)
+{
+	int		*tmp;
+	long	nbr;
+
+	nbr = ft_atol(str);
+	if (nbr > INT_MAX || nbr < INT_MIN)
+		ft_error(stack_a, NULL);
+	tmp = malloc(sizeof(int));
+	if (!tmp)
+		ft_error(stack_a, NULL);
+	*tmp = nbr;
+	ft_lstadd_back(stack_a, ft_lstnew(tmp));
+}
+
 void	ft_parse_arg(char *arg, t_list **stack_a)
 {
-	int	ind_str;
-	int	*nbr;
+	int		ind_str;
+	int		nbr_len;
 
 	ind_str = 0;
 	while (arg[ind_str])
@@ -45,20 +56,18 @@ void	ft_parse_arg(char *arg, t_list **stack_a)
 		if (arg[ind_str] == '-' || arg[ind_str] == '+'
 			|| ft_isdigit(arg[ind_str]))
 		{
-			if (arg[ind_str] == '+')
-				ind_str++;
 			if (ft_isdigit(arg[ind_str]) || ft_isdigit(arg[ind_str + 1]))
 			{
-				nbr = malloc(sizeof(int));
-				if (!nbr)
+				nbr_len = ft_numlen(&arg[ind_str]);
+				if ((ft_isdigit(arg[ind_str]) && nbr_len > 10) || nbr_len > 11)
 					ft_error(stack_a, NULL);
-				*nbr = ft_atoi(arg + ind_str);
-				ft_lstadd_back(stack_a, ft_lstnew(nbr));
-				ind_str += ft_numlen(*nbr) - 1;
+				ft_add_nbr(stack_a, &arg[ind_str]);
+				ind_str += nbr_len - 1;
 			}
 			else
 				ft_error(stack_a, NULL);
-		} else if (!ft_isspace(arg[ind_str]))
+		}
+		else if (!ft_isspace(arg[ind_str]))
 			ft_error(stack_a, NULL);
 		ind_str++;
 	}

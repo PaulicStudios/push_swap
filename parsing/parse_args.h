@@ -6,7 +6,7 @@
 /*   By: pgrossma <pgrossma@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 17:46:28 by pgrossma          #+#    #+#             */
-/*   Updated: 2023/11/25 18:11:28 by pgrossma         ###   ########.fr       */
+/*   Updated: 2023/11/25 19:36:17 by pgrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "push_swap.h"
 # include "libft.h"
+# include <limits.h>
 
 t_list	*ft_parse_args(int argc, char **argv);
 

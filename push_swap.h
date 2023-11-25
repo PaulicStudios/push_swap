@@ -6,7 +6,7 @@
 /*   By: pgrossma <pgrossma@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 20:01:51 by pgrossma          #+#    #+#             */
-/*   Updated: 2023/11/25 18:23:10 by pgrossma         ###   ########.fr       */
+/*   Updated: 2023/11/25 19:12:49 by pgrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include "parse_args.h"
 
 void	ft_error(t_list **stack_a, t_list **stack_b);
+void	ft_print_stack(t_list *stack_a);
 void	ft_del_int(void *content);
 
 #endif

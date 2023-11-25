@@ -6,7 +6,7 @@
 /*   By: pgrossma <pgrossma@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 15:10:05 by pgrossma          #+#    #+#             */
-/*   Updated: 2023/10/12 18:11:55 by pgrossma         ###   ########.fr       */
+/*   Updated: 2023/11/25 19:35:03 by pgrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
+double	ft_atof(const char *str);
 int		ft_atoi(const char *str);
+long	ft_atol(const char *str);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t count, size_t size);
 int		ft_isalnum(int c);
@@ -38,6 +40,7 @@ void	*ft_memcpy(void *dst,
 			const void *src, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t n);
 void	*ft_memset(void *b, int c, size_t len);
+double	ft_pow(double nbr, double power);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);

@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pgrossma <pgrossma@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/25 18:05:57 by pgrossma          #+#    #+#             */
-/*   Updated: 2023/11/25 19:39:47 by pgrossma         ###   ########.fr       */
+/*   Created: 2023/10/07 14:29:02 by pgrossma          #+#    #+#             */
+/*   Updated: 2023/11/25 19:31:19 by pgrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+long	ft_atol(const char *str)
 {
-	t_list	*stack_a;
-	t_list	*stack_b;
+	size_t	i;
+	int		minus;
+	long	result;
 
-	stack_a = ft_parse_args(argc, argv);
-	stack_b = NULL;
-	ft_print_stack(stack_a);
-	ft_lstclear(&stack_a, ft_del_int);
-	ft_lstclear(&stack_b, ft_del_int);
-	// system("leaks push_swap");
-	return (0);
+	i = 0;
+	minus = 1;
+	result = 0;
+	while (ft_isspace(str[i]))
+		i++;
+	if (str[i] == '-')
+		minus = -1;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	while (ft_isdigit(str[i]))
+	{
+		result = result * 10 + str[i] - '0';
+		i++;
+	}
+	return (result * minus);
 }
