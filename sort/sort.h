@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   sort.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pgrossma <pgrossma@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/01 20:01:51 by pgrossma          #+#    #+#             */
-/*   Updated: 2023/11/25 20:22:09 by pgrossma         ###   ########.fr       */
+/*   Created: 2023/11/25 20:20:12 by pgrossma          #+#    #+#             */
+/*   Updated: 2023/11/25 20:34:31 by pgrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef SORT_H
+# define SORT_H
 
 # include "libft.h"
-# include "operations.h"
-# include "parse_args.h"
-# include "sort.h"
+# include "push_swap.h"
+# include "operations_wrap.h"
 
-void	ft_error(t_list **stack_a, t_list **stack_b);
-void	ft_print_stack(t_list *stack_a);
-void	ft_del_int(void *content);
+int		ft_check_sort(t_list *stack);
+void	ft_sort_less_three(t_list **stack_a);
+void	ft_sort_less_five(t_list **stack_a, t_list **stack_b);
 
 #endif

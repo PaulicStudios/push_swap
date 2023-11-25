@@ -6,12 +6,13 @@
 #    By: pgrossma <pgrossma@student.42heilbronn.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/09 12:59:39 by pgrossma          #+#    #+#              #
-#    Updated: 2023/11/25 19:13:02 by pgrossma         ###   ########.fr        #
+#    Updated: 2023/11/25 20:29:21 by pgrossma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC =	operations/operations.c operations/operations_wrap_r.c operations/operations_wrap_rr.c operations/operations_wrap_sp.c\
 		parsing/parse_args.c\
+		sort/util_sort.c sort/simple_sort.c\
 		utils.c\
 		push_swap.c
 OBJ = $(SRC:%.c=%.o)
@@ -20,7 +21,7 @@ NAME = push_swap
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-INC = -I . -I libft -I parsing -I operations
+INC = -I . -I libft -I parsing -I operations -I sort
 LIB = libft/libft.a
 
 .PHONY: all clean fclean re

@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   util_sort.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pgrossma <pgrossma@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/01 20:01:51 by pgrossma          #+#    #+#             */
-/*   Updated: 2023/11/25 20:22:09 by pgrossma         ###   ########.fr       */
+/*   Created: 2023/11/25 20:17:27 by pgrossma          #+#    #+#             */
+/*   Updated: 2023/11/25 20:31:22 by pgrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "sort.h"
 
-# include "libft.h"
-# include "operations.h"
-# include "parse_args.h"
-# include "sort.h"
+int	ft_check_sort(t_list *stack)
+{
+	int	*nbr;
+	int	*next_nbr;
 
-void	ft_error(t_list **stack_a, t_list **stack_b);
-void	ft_print_stack(t_list *stack_a);
-void	ft_del_int(void *content);
-
-#endif
+	while (stack->next != NULL)
+	{
+		nbr = stack->content;
+		next_nbr = stack->next->content;
+		if (*nbr > *next_nbr)
+			return (0);
+		stack = stack->next;
+	}
+	return (1);
+}

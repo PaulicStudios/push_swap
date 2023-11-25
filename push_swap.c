@@ -6,7 +6,7 @@
 /*   By: pgrossma <pgrossma@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 18:05:57 by pgrossma          #+#    #+#             */
-/*   Updated: 2023/11/25 19:39:47 by pgrossma         ###   ########.fr       */
+/*   Updated: 2023/11/25 20:37:22 by pgrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,13 @@ int	main(int argc, char **argv)
 
 	stack_a = ft_parse_args(argc, argv);
 	stack_b = NULL;
+	ft_print_stack(stack_a);
+	if (ft_check_sort(stack_a))
+		return (0);
+	if (ft_lstsize(stack_a) <= 3)
+		ft_sort_less_three(&stack_a);
+	// else if (ft_lstsize(stack_a) <= 5)
+	// 	ft_sort_less_five(&stack_a, &stack_b);
 	ft_print_stack(stack_a);
 	ft_lstclear(&stack_a, ft_del_int);
 	ft_lstclear(&stack_b, ft_del_int);
