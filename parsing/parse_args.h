@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   parse_args.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pgrossma <pgrossma@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/01 20:01:51 by pgrossma          #+#    #+#             */
-/*   Updated: 2023/11/25 18:23:10 by pgrossma         ###   ########.fr       */
+/*   Created: 2023/11/25 17:46:28 by pgrossma          #+#    #+#             */
+/*   Updated: 2023/11/25 18:11:28 by pgrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef PARSE_ARGS_H
+# define PARSE_ARGS_H
 
+# include "push_swap.h"
 # include "libft.h"
-# include "operations.h"
-# include "parse_args.h"
 
-void	ft_error(t_list **stack_a, t_list **stack_b);
-void	ft_del_int(void *content);
+t_list	*ft_parse_args(int argc, char **argv);
 
 #endif
