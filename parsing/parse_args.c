@@ -6,7 +6,7 @@
 /*   By: pgrossma <pgrossma@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 17:45:21 by pgrossma          #+#    #+#             */
-/*   Updated: 2023/11/25 19:39:14 by pgrossma         ###   ########.fr       */
+/*   Updated: 2023/12/16 18:34:08 by pgrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,17 +32,12 @@ int	ft_numlen(char *str)
 
 void	ft_add_nbr(t_list **stack_a, char *str)
 {
-	int		*tmp;
 	long	nbr;
 
 	nbr = ft_atol(str);
 	if (nbr > INT_MAX || nbr < INT_MIN)
 		ft_error(stack_a, NULL);
-	tmp = malloc(sizeof(int));
-	if (!tmp)
-		ft_error(stack_a, NULL);
-	*tmp = nbr;
-	ft_lstadd_back(stack_a, ft_lstnew(tmp));
+	ft_lstadd_back(stack_a, ft_lstnew((int) nbr));
 }
 
 void	ft_parse_arg(char *arg, t_list **stack_a)
@@ -79,7 +74,7 @@ t_list	*ft_parse_args(int argc, char **argv)
 	int		ind_arg;
 
 	if (argc < 2)
-		ft_error(NULL, NULL);
+		exit(0);
 	stack_a = NULL;
 	ind_arg = 1;
 	while (ind_arg < argc)

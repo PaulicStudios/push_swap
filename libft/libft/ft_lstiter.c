@@ -6,17 +6,17 @@
 /*   By: pgrossma <pgrossma@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 18:00:18 by pgrossma          #+#    #+#             */
-/*   Updated: 2023/10/11 20:11:37 by pgrossma         ###   ########.fr       */
+/*   Updated: 2023/12/16 18:18:24 by pgrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+void	ft_lstiter(t_list *lst, void (*f)(int))
 {
 	while (lst)
 	{
-		f(lst->content);
+		f(lst->nbr);
 		lst = lst->next;
 	}
 }
