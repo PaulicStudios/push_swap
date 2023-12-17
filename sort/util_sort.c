@@ -6,7 +6,7 @@
 /*   By: pgrossma <pgrossma@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 20:17:27 by pgrossma          #+#    #+#             */
-/*   Updated: 2023/12/16 18:23:36 by pgrossma         ###   ########.fr       */
+/*   Updated: 2023/12/17 20:54:42 by pgrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,20 @@ int	ft_check_sort(t_list *stack)
 		stack = stack->next;
 	}
 	return (1);
+}
+
+int	ft_sqrt(int nb)
+{
+	int	sqr_root;
+
+	if (nb < 0)
+		return (0);
+	sqr_root = 0;
+	while (sqr_root * sqr_root <= nb)
+	{
+		if (sqr_root * sqr_root <= nb && (sqr_root + 1) * (sqr_root + 1) >= nb)
+			return (sqr_root);
+		sqr_root++;
+	}
+	return (0);
 }
