@@ -6,7 +6,7 @@
 /*   By: pgrossma <pgrossma@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 18:05:57 by pgrossma          #+#    #+#             */
-/*   Updated: 2023/12/17 18:50:47 by pgrossma         ###   ########.fr       */
+/*   Updated: 2023/12/17 19:01:19 by pgrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	main(int argc, char **argv)
 	ft_pre_index(&stack_a);
 	ft_print_stack(stack_a);
 	ft_sort(&stack_a, &stack_b);
-	ft_print_stack(stack_a);
+	ft_print_stack(stack_b);
 	ft_exit_final(&stack_a, &stack_b);
 	return (0);
 }

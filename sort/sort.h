@@ -6,7 +6,7 @@
 /*   By: pgrossma <pgrossma@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 20:20:12 by pgrossma          #+#    #+#             */
-/*   Updated: 2023/12/17 18:50:57 by pgrossma         ###   ########.fr       */
+/*   Updated: 2023/12/17 18:59:14 by pgrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@ void	ft_sort_two(t_list **stack_a);
 void	ft_sort_three(t_list **stack_a);
 void	ft_sort_less_five(t_list **stack_a, t_list **stack_b);
 void	ft_pre_index(t_list **stack);
+void	ft_k_sort(t_list **stack_a, t_list **stack_b);
 
 #endif

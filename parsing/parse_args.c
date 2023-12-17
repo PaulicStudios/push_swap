@@ -6,7 +6,7 @@
 /*   By: pgrossma <pgrossma@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 17:45:21 by pgrossma          #+#    #+#             */
-/*   Updated: 2023/12/16 18:34:08 by pgrossma         ###   ########.fr       */
+/*   Updated: 2023/12/17 19:15:02 by pgrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,28 @@ int	ft_numlen(char *str)
 	return (count);
 }
 
+int	ft_duplicate(t_list *stack_a, int nbr)
+{
+	t_list	*tmp;
+
+	tmp = stack_a;
+	while (tmp)
+	{
+		if (tmp->nbr == nbr)
+			return (1);
+		tmp = tmp->next;
+	}
+	return (0);
+}
+
 void	ft_add_nbr(t_list **stack_a, char *str)
 {
 	long	nbr;
 
 	nbr = ft_atol(str);
 	if (nbr > INT_MAX || nbr < INT_MIN)
+		ft_error(stack_a, NULL);
+	if (ft_duplicate(*stack_a, (int) nbr))
 		ft_error(stack_a, NULL);
 	ft_lstadd_back(stack_a, ft_lstnew((int) nbr));
 }
