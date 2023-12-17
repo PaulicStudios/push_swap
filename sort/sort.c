@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.h                                             :+:      :+:    :+:   */
+/*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pgrossma <pgrossma@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/25 20:20:12 by pgrossma          #+#    #+#             */
-/*   Updated: 2023/12/17 18:50:57 by pgrossma         ###   ########.fr       */
+/*   Created: 2023/12/17 16:49:51 by pgrossma          #+#    #+#             */
+/*   Updated: 2023/12/17 17:11:26 by pgrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SORT_H
-# define SORT_H
+#include "sort.h"
 
-# include "libft.h"
-# include "push_swap.h"
-# include "operations_wrap.h"
+void	ft_sort(t_list **stack_a, t_list **stack_b)
+{
+	int	lst_size;
 
-int		ft_check_sort(t_list *stack);
-void	ft_sort(t_list **stack_a, t_list **stack_b);
-void	ft_sort_two(t_list **stack_a);
-void	ft_sort_three(t_list **stack_a);
-void	ft_sort_less_five(t_list **stack_a, t_list **stack_b);
-void	ft_pre_index(t_list **stack);
-
-#endif
+	lst_size = ft_lstsize(*stack_a);
+	if (ft_check_sort(*stack_a))
+		return ;
+	if (lst_size == 2)
+		ft_sort_two(stack_a);
+	else if (lst_size == 3)
+		ft_sort_three(stack_a);
+	else if (lst_size <= 5)
+		ft_sort_less_five(stack_a, stack_b);
+	// else
+	// 	ft_sort_more_five(stack_a, stack_b);
+	stack_b = 0;
+}

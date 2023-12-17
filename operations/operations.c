@@ -6,7 +6,7 @@
 /*   By: pgrossma <pgrossma@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 20:11:30 by pgrossma          #+#    #+#             */
-/*   Updated: 2023/11/01 21:31:11 by pgrossma         ###   ########.fr       */
+/*   Updated: 2023/12/17 16:46:49 by pgrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,15 @@ void	rotate(t_list **stack)
 void	reverse_rotate(t_list **stack)
 {
 	t_list	*tmp;
+	t_list	*new_last;
 
 	if (!stack || !*stack || !(*stack)->next)
 		return ;
 	tmp = *stack;
+	new_last = *stack;
 	*stack = ft_lstlast(*stack);
-	(*stack)->next = NULL;
-	ft_lstadd_front(stack, tmp);
+	while (new_last->next->next)
+		new_last = new_last->next;
+	new_last->next = NULL;
+	(*stack)->next = tmp;
 }

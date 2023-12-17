@@ -6,7 +6,7 @@
 /*   By: pgrossma <pgrossma@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 19:12:14 by pgrossma          #+#    #+#             */
-/*   Updated: 2023/12/16 18:24:04 by pgrossma         ###   ########.fr       */
+/*   Updated: 2023/12/17 18:49:39 by pgrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@ void	ft_print_stack(t_list *stack_a)
 	tmp = stack_a;
 	while (tmp)
 	{
-		ft_putnbr_fd(tmp->nbr, 1);
-		ft_putchar_fd('\n', 1);
+		ft_printf("%d - %d\n", tmp->nbr, tmp->index);
 		tmp = tmp->next;
 	}
 }

@@ -6,13 +6,13 @@
 #    By: pgrossma <pgrossma@student.42heilbronn.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/09 12:59:39 by pgrossma          #+#    #+#              #
-#    Updated: 2023/11/25 20:29:21 by pgrossma         ###   ########.fr        #
+#    Updated: 2023/12/17 18:54:03 by pgrossma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC =	operations/operations.c operations/operations_wrap_r.c operations/operations_wrap_rr.c operations/operations_wrap_sp.c\
 		parsing/parse_args.c\
-		sort/util_sort.c sort/simple_sort.c\
+		sort/sort.c sort/pre_index.c sort/util_sort.c sort/simple_sort.c sort/k_sort.c\
 		utils.c\
 		push_swap.c
 OBJ = $(SRC:%.c=%.o)

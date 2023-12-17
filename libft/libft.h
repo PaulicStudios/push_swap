@@ -6,7 +6,7 @@
 /*   By: pgrossma <pgrossma@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 15:10:05 by pgrossma          #+#    #+#             */
-/*   Updated: 2023/12/16 18:28:59 by pgrossma         ###   ########.fr       */
+/*   Updated: 2023/12/17 18:44:50 by pgrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 typedef struct s_list
 {
 	int				nbr;
+	int				index;
 	struct s_list	*next;
 }					t_list;
 
