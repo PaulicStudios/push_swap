@@ -6,7 +6,7 @@
 /*   By: pgrossma <pgrossma@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 18:52:02 by pgrossma          #+#    #+#             */
-/*   Updated: 2023/12/17 20:55:56 by pgrossma         ###   ########.fr       */
+/*   Updated: 2023/12/17 21:56:36 by pgrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 void	ft_push_b(t_list **stack_a, t_list **stack_b, int lst_size)
 {
-	int	count = 0;
+	int	count;
 	int	range;
 
+	count = 0;
 	range = ft_sqrt(lst_size) * 1.6;
 	while (*stack_a)
 	{
