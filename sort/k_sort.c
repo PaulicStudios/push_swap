@@ -6,7 +6,7 @@
 /*   By: pgrossma <pgrossma@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 18:52:02 by pgrossma          #+#    #+#             */
-/*   Updated: 2023/12/17 21:56:36 by pgrossma         ###   ########.fr       */
+/*   Updated: 2023/12/18 12:16:37 by pgrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ void	ft_k_sort(t_list **stack_a, t_list **stack_b)
 {
 	int	lst_size;
 
+	ft_pre_index(stack_a);
 	lst_size = ft_lstsize(*stack_a);
 	ft_push_b(stack_a, stack_b, lst_size);
 	ft_push_back(stack_a, stack_b);

@@ -6,7 +6,7 @@
 #    By: pgrossma <pgrossma@student.42heilbronn.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/09 12:59:39 by pgrossma          #+#    #+#              #
-#    Updated: 2023/12/17 18:54:03 by pgrossma         ###   ########.fr        #
+#    Updated: 2023/12/18 12:23:13 by pgrossma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,3 +44,11 @@ fclean: clean
 	rm -f $(NAME) push_swap.a
 
 re: fclean all
+
+push_swap_visualizer:
+	git clone https://github.com/o-reo/push_swap_visualizer
+	mkdir push_swap_visualizer/build
+	cd push_swap_visualizer/build && cmake .. && make
+
+visu: push_swap_visualizer
+	./push_swap_visualizer/build/bin/visualizer
