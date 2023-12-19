@@ -6,7 +6,7 @@
 /*   By: pgrossma <pgrossma@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 18:52:02 by pgrossma          #+#    #+#             */
-/*   Updated: 2023/12/18 12:16:37 by pgrossma         ###   ########.fr       */
+/*   Updated: 2023/12/18 16:07:10 by pgrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,18 @@ void	ft_push_b(t_list **stack_a, t_list **stack_b, int lst_size)
 	{
 		if ((*stack_a)->index < count)
 		{
-			pb(stack_a, stack_b);
-			rb(stack_b);
+			pb(stack_a, stack_b, 1);
+			rb(stack_b, 1);
 			count++;
 		}
 		else if ((*stack_a)->index < count + range)
 		{
-			pb(stack_a, stack_b);
+			pb(stack_a, stack_b, 1);
 			count++;
 		}
 		else
 		{
-			ra(stack_a);
+			ra(stack_a, 1);
 		}
 	}
 }
@@ -67,14 +67,14 @@ void	ft_push_back(t_list **stack_a, t_list **stack_b)
 		{
 			moves = ft_lstsize(*stack_b) - moves;
 			while (moves--)
-				rrb(stack_b);
+				rrb(stack_b, 1);
 		}
 		else
 		{
 			while (moves--)
-				rb(stack_b);
+				rb(stack_b, 1);
 		}
-		pa(stack_a, stack_b);
+		pa(stack_a, stack_b, 1);
 		current_index--;
 	}
 }

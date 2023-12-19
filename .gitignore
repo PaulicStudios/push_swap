@@ -4,5 +4,7 @@
 push_swap
 .vscode
 checker_Mac
-push_swap_visualizer
+checker
+push_swap_visualizer/
 .DS_Store
+imgui.ini

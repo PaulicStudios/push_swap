@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pgrossma <pgrossma@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/25 18:05:57 by pgrossma          #+#    #+#             */
-/*   Updated: 2023/12/18 16:31:27 by pgrossma         ###   ########.fr       */
+/*   Created: 2023/12/18 12:29:13 by pgrossma          #+#    #+#             */
+/*   Updated: 2023/12/18 12:31:06 by pgrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#ifndef CHECKER_H
+# define CHECKER_H
 
-int	main(int argc, char **argv)
-{
-	t_list	*stack_a;
-	t_list	*stack_b;
+# include "libft.h"
+# include "push_swap.h"
+# include "get_next_line.h"
 
-	stack_a = ft_parse_args(argc, argv);
-	stack_b = NULL;
-	ft_sort(&stack_a, &stack_b);
-	ft_print_stack(stack_a);
-	ft_lstclear(&stack_a);
-	ft_lstclear(&stack_b);
-	return (0);
-}
+#endif
