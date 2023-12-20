@@ -6,7 +6,7 @@
 /*   By: pgrossma <pgrossma@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 18:52:02 by pgrossma          #+#    #+#             */
-/*   Updated: 2023/12/18 16:07:10 by pgrossma         ###   ########.fr       */
+/*   Updated: 2023/12/20 13:03:47 by pgrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,8 @@ int	ft_moves(t_list *stack, int index)
 
 void	ft_push_back(t_list **stack_a, t_list **stack_b)
 {
-	int		current_index;
-	int		moves;
+	int	current_index;
+	int	moves;
 
 	current_index = ft_lstsize(*stack_b) - 1;
 	while (*stack_b)
