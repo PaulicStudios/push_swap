@@ -6,7 +6,7 @@
 /*   By: pgrossma <pgrossma@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 16:49:51 by pgrossma          #+#    #+#             */
-/*   Updated: 2023/12/18 16:41:40 by pgrossma         ###   ########.fr       */
+/*   Updated: 2023/12/19 20:05:24 by pgrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,10 @@ void	ft_sort(t_list **stack_a, t_list **stack_b)
 		ft_sort_two(stack_a);
 	else if (lst_size == 3)
 		ft_sort_three(stack_a);
-	else if (lst_size <= 5)
-		ft_sort_less_five(stack_a, stack_b);
+	else if (lst_size == 4)
+		ft_sort_four(stack_a, stack_b);
+	else if (lst_size == 5)
+		ft_sort_five(stack_a, stack_b);
 	else
 		ft_k_sort(stack_a, stack_b);
 }

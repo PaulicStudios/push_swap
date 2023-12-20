@@ -6,7 +6,7 @@
 /*   By: pgrossma <pgrossma@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 18:05:57 by pgrossma          #+#    #+#             */
-/*   Updated: 2023/12/18 16:31:27 by pgrossma         ###   ########.fr       */
+/*   Updated: 2023/12/19 18:17:11 by pgrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ int	main(int argc, char **argv)
 	stack_a = ft_parse_args(argc, argv);
 	stack_b = NULL;
 	ft_sort(&stack_a, &stack_b);
-	ft_print_stack(stack_a);
 	ft_lstclear(&stack_a);
 	ft_lstclear(&stack_b);
 	return (0);

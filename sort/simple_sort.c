@@ -6,7 +6,7 @@
 /*   By: pgrossma <pgrossma@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 20:11:45 by pgrossma          #+#    #+#             */
-/*   Updated: 2023/12/19 13:56:29 by pgrossma         ###   ########.fr       */
+/*   Updated: 2023/12/20 12:26:12 by pgrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,57 +20,71 @@ void	ft_sort_two(t_list **stack)
 
 void	ft_sort_three(t_list **stack)
 {
-	if ((*stack)->nbr > (*stack)->next->nbr
-		&& (*stack)->nbr < (*stack)->next->next->nbr)
+	int	a;
+	int	b;
+	int	c;
+
+	a = (*stack)->nbr;
+	b = (*stack)->next->nbr;
+	c = (*stack)->next->next->nbr;
+
+	if (a > b && b < c && c > a)
 		sa(stack, 1);
-	else if ((*stack)->nbr > (*stack)->next->nbr
-		&& (*stack)->next->nbr > (*stack)->next->next->nbr)
+	if (a > b && b > c && c < a)
 	{
 		sa(stack, 1);
 		rra(stack, 1);
 	}
-	else if ((*stack)->nbr > (*stack)->next->nbr
-		&& (*stack)->next->nbr < (*stack)->next->next->nbr)
+	if (a > b && b < c && c < a)
 		ra(stack, 1);
-	else if ((*stack)->nbr < (*stack)->next->nbr
-		&& (*stack)->next->nbr > (*stack)->next->next->nbr)
+	if (a < b && b > c && c > a)
 	{
 		sa(stack, 1);
 		ra(stack, 1);
 	}
-	else if ((*stack)->nbr < (*stack)->next->nbr
-		&& (*stack)->next->nbr > (*stack)->next->next->nbr)
+	if (a < b && b > c && c < a)
 		rra(stack, 1);
 }
 
-void	ft_sort_less_five(t_list **stack_a, t_list **stack_b)
+void	ft_sort_four(t_list **stack_a, t_list **stack_b)
 {
+	int	current_index;
+
 	ft_pre_index(stack_a);
-	pb(stack_a, stack_b, 1);
-	pb(stack_a, stack_b, 1);
-	if (ft_lstsize(*stack_a) == 2)
-		ft_sort_two(stack_a);
-	else
-		ft_sort_three(stack_a);
-	// if ((*stack_a)->index != 0)
-	// {
-	// 	if ((*stack_b)->index == 0)
-	// 		pa(stack_a, stack_b, 1);
-	// 	else
-	// 	{
-	// 		rb(stack_b, 1);
-	// 		pa(stack_a, stack_b, 1);
-	// 	}
-	// }
-	while (*stack_b)
+	current_index = (*stack_a)->index;
+	while (current_index != 0)
 	{
-		if ((*stack_a)->index + 1 == (*stack_b)->index)
-			pa(stack_a, stack_b, 1);
+		if (current_index == 1)
+			pb(stack_a, stack_b, 1);
+		else
+			ra(stack_a, 1);
+		current_index = (*stack_a)->index;
+	}
+}
+
+void	ft_sort_five(t_list **stack_a, t_list **stack_b)
+{
+	int		i;
+	int		lst_size;
+
+	ft_pre_index(stack_a);
+	i = 0;
+	lst_size = ft_lstsize(*stack_a);
+	while (i < lst_size - 3)
+	{
+		if ((*stack_a)->index == 0 || (*stack_a)->index == 1)
+		{
+			pb(stack_a, stack_b, 1);
+			i++;
+		}
 		else
 			ra(stack_a, 1);
 	}
-	ft_printf("stack_a:\n");
-	ft_print_stack(*stack_a);
-	while ((*stack_a)->index != 0)
-		ra(stack_a, 1);
+	// ft_print_stack(*stack_a);
+	ft_sort_three(stack_a);
+	if ((*stack_b)->nbr < (*stack_b)->next->nbr)
+		sb(stack_b, 1);
+	pa(stack_a, stack_b, 1);
+	pa(stack_a, stack_b, 1);
+	// ft_print_stack(*stack_a);
 }
