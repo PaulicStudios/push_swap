@@ -6,7 +6,7 @@
 /*   By: pgrossma <pgrossma@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 12:29:37 by pgrossma          #+#    #+#             */
-/*   Updated: 2023/12/18 16:07:51 by pgrossma         ###   ########.fr       */
+/*   Updated: 2023/12/22 17:41:29 by pgrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,14 @@ void	ft_execute(t_list **stack_a, t_list **stack_b, char *line)
 		ra(stack_a, 0);
 	else if (!ft_strncmp(line, "rb", 2))
 		rb(stack_b, 0);
-	else if (!ft_strncmp(line, "rr", 2))
-		rr(stack_a, stack_b, 0);
 	else if (!ft_strncmp(line, "rra", 3))
 		rra(stack_a, 0);
 	else if (!ft_strncmp(line, "rrb", 3))
 		rrb(stack_b, 0);
 	else if (!ft_strncmp(line, "rrr", 3))
 		rrr(stack_a, stack_b, 0);
+	else if (!ft_strncmp(line, "rr", 2))
+		rr(stack_a, stack_b, 0);
 	else
 		ft_error(stack_a, stack_b);
 }
