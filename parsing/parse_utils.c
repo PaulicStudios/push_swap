@@ -1,24 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_args.h                                       :+:      :+:    :+:   */
+/*   parse_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pgrossma <pgrossma@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/25 17:46:28 by pgrossma          #+#    #+#             */
-/*   Updated: 2023/12/22 17:39:52 by pgrossma         ###   ########.fr       */
+/*   Created: 2023/12/22 17:39:10 by pgrossma          #+#    #+#             */
+/*   Updated: 2023/12/22 17:39:29 by pgrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PARSE_ARGS_H
-# define PARSE_ARGS_H
+#include "push_swap.h"
 
-# include "push_swap.h"
-# include "libft.h"
-# include <limits.h>
+int	ft_numlen(char *str)
+{
+	int	count;
 
-t_list	*ft_parse_args(int argc, char **argv);
-int		ft_count_zeros(char *str);
-int		ft_numlen(char *str);
+	count = 0;
+	if (*str == '-' || *str == '+')
+	{
+		str++;
+		count++;
+	}
+	while (*str == '0')
+		str++;
+	while (ft_isdigit(*str))
+	{
+		count++;
+		str++;
+	}
+	return (count);
+}
 
-#endif
+int	ft_count_zeros(char *str)
+{
+	int	count;
+
+	count = 0;
+	if (*str == '-' || *str == '+')
+		str++;
+	while (*str == '0')
+	{
+		count++;
+		str++;
+	}
+	return (count);
+}

@@ -6,46 +6,11 @@
 /*   By: pgrossma <pgrossma@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 17:45:21 by pgrossma          #+#    #+#             */
-/*   Updated: 2023/12/22 17:35:44 by pgrossma         ###   ########.fr       */
+/*   Updated: 2023/12/22 17:39:27 by pgrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parse_args.h"
-
-int	ft_numlen(char *str)
-{
-	int	count;
-
-	count = 0;
-	if (*str == '-' || *str == '+')
-	{
-		str++;
-		count++;
-	}
-	while (*str == '0')
-		str++;
-	while (ft_isdigit(*str))
-	{
-		count++;
-		str++;
-	}
-	return (count);
-}
-
-int	ft_count_zeros(char *str)
-{
-	int	count;
-
-	count = 0;
-	if (*str == '-' || *str == '+')
-		str++;
-	while (*str == '0')
-	{
-		count++;
-		str++;
-	}
-	return (count);
-}
 
 int	ft_duplicate(t_list *stack_a, int nbr)
 {
