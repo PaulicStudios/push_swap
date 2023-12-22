@@ -6,7 +6,7 @@
 /*   By: pgrossma <pgrossma@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 14:29:02 by pgrossma          #+#    #+#             */
-/*   Updated: 2023/11/25 19:31:19 by pgrossma         ###   ########.fr       */
+/*   Updated: 2023/12/22 16:58:12 by pgrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ long	ft_atol(const char *str)
 	if (str[i] == '-')
 		minus = -1;
 	if (str[i] == '-' || str[i] == '+')
+		i++;
+	while (str[i] == '0')
 		i++;
 	while (ft_isdigit(str[i]))
 	{

@@ -6,7 +6,7 @@
 /*   By: pgrossma <pgrossma@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 17:45:21 by pgrossma          #+#    #+#             */
-/*   Updated: 2023/12/17 19:15:02 by pgrossma         ###   ########.fr       */
+/*   Updated: 2023/12/22 17:35:44 by pgrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,24 @@ int	ft_numlen(char *str)
 		str++;
 		count++;
 	}
+	while (*str == '0')
+		str++;
 	while (ft_isdigit(*str))
+	{
+		count++;
+		str++;
+	}
+	return (count);
+}
+
+int	ft_count_zeros(char *str)
+{
+	int	count;
+
+	count = 0;
+	if (*str == '-' || *str == '+')
+		str++;
+	while (*str == '0')
 	{
 		count++;
 		str++;
@@ -73,7 +90,7 @@ void	ft_parse_arg(char *arg, t_list **stack_a)
 				if ((ft_isdigit(arg[ind_str]) && nbr_len > 10) || nbr_len > 11)
 					ft_error(stack_a, NULL);
 				ft_add_nbr(stack_a, &arg[ind_str]);
-				ind_str += nbr_len - 1;
+				ind_str += nbr_len - 1 + ft_count_zeros(&arg[ind_str]);
 			}
 			else
 				ft_error(stack_a, NULL);
