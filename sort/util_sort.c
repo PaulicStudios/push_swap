@@ -6,7 +6,7 @@
 /*   By: pgrossma <pgrossma@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 20:17:27 by pgrossma          #+#    #+#             */
-/*   Updated: 2023/12/17 20:54:42 by pgrossma         ###   ########.fr       */
+/*   Updated: 2023/12/23 15:00:01 by pgrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	ft_check_sort(t_list *stack)
 	int	nbr;
 	int	next_nbr;
 
+	if (!stack)
+		return (1);
 	while (stack->next != NULL)
 	{
 		nbr = stack->nbr;

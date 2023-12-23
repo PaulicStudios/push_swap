@@ -6,5 +6,6 @@ push_swap
 checker_Mac
 checker
 push_swap_visualizer/
+push_swap_tester/
 .DS_Store
 imgui.ini
