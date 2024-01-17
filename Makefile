@@ -6,7 +6,7 @@
 #    By: pgrossma <pgrossma@student.42heilbronn.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/09 12:59:39 by pgrossma          #+#    #+#              #
-#    Updated: 2023/12/23 14:31:35 by pgrossma         ###   ########.fr        #
+#    Updated: 2024/01/17 15:58:22 by pgrossma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	make -C libft
-	$(CC) $(CFLAGS) $(LIB) $^ -o $(NAME) $(INC)
+	$(CC) $(CFLAGS) $^ -o $(NAME) $(INC) -L libft -lft
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@ $(INC)
