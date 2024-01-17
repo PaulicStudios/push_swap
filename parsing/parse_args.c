@@ -6,7 +6,7 @@
 /*   By: pgrossma <pgrossma@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 17:45:21 by pgrossma          #+#    #+#             */
-/*   Updated: 2024/01/17 19:32:47 by pgrossma         ###   ########.fr       */
+/*   Updated: 2024/01/17 19:48:48 by pgrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,10 @@ void	ft_add_nbr(t_list **stack_a, char *str)
 	ft_lstadd_back(stack_a, ft_lstnew((int) nbr));
 }
 
-void	ft_parse_arg(char *arg, t_list **stack_a)
+void	ft_parse_arg(char *arg, t_list **stack_a, int ind_str)
 {
-	int		ind_str;
 	int		nbr_len;
 
-	ind_str = 0;
 	while (arg[ind_str])
 	{
 		if (arg[ind_str] == '-' || arg[ind_str] == '+'
@@ -79,7 +77,9 @@ t_list	*ft_parse_args(int argc, char **argv)
 	ind_arg = 1;
 	while (ind_arg < argc)
 	{
-		ft_parse_arg(argv[ind_arg], &stack_a);
+		if (ft_strlen(argv[ind_arg]) == 0)
+			ft_error(&stack_a, NULL);
+		ft_parse_arg(argv[ind_arg], &stack_a, 0);
 		ind_arg++;
 	}
 	return (stack_a);
