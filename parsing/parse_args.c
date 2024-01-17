@@ -6,7 +6,7 @@
 /*   By: pgrossma <pgrossma@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 17:45:21 by pgrossma          #+#    #+#             */
-/*   Updated: 2023/12/22 17:39:27 by pgrossma         ###   ########.fr       */
+/*   Updated: 2024/01/17 19:32:47 by pgrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ void	ft_parse_arg(char *arg, t_list **stack_a)
 		else if (!ft_isspace(arg[ind_str]))
 			ft_error(stack_a, NULL);
 		ind_str++;
+		if (!ft_isspace(arg[ind_str]) && arg[ind_str] != 0)
+			ft_error(stack_a, NULL);
 	}
 }
 

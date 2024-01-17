@@ -6,7 +6,7 @@
 /*   By: pgrossma <pgrossma@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 12:29:37 by pgrossma          #+#    #+#             */
-/*   Updated: 2023/12/23 15:03:22 by pgrossma         ###   ########.fr       */
+/*   Updated: 2024/01/17 19:34:22 by pgrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,27 @@
 
 void	ft_execute(t_list **stack_a, t_list **stack_b, char *line)
 {
-	if (!ft_strncmp(line, "sa", 2))
+	if (!ft_strncmp(line, "sa\n", 3))
 		sa(stack_a, 0);
-	else if (!ft_strncmp(line, "sb", 2))
+	else if (!ft_strncmp(line, "sb\n", 3))
 		sb(stack_b, 0);
-	else if (!ft_strncmp(line, "ss", 2))
+	else if (!ft_strncmp(line, "ss\n", 3))
 		ss(stack_a, stack_b, 0);
-	else if (!ft_strncmp(line, "pa", 2))
+	else if (!ft_strncmp(line, "pa\n", 3))
 		pa(stack_a, stack_b, 0);
-	else if (!ft_strncmp(line, "pb", 2))
+	else if (!ft_strncmp(line, "pb\n", 3))
 		pb(stack_a, stack_b, 0);
-	else if (!ft_strncmp(line, "ra", 2))
+	else if (!ft_strncmp(line, "ra\n", 3))
 		ra(stack_a, 0);
-	else if (!ft_strncmp(line, "rb", 2))
+	else if (!ft_strncmp(line, "rb\n", 3))
 		rb(stack_b, 0);
-	else if (!ft_strncmp(line, "rra", 3))
+	else if (!ft_strncmp(line, "rra\n", 4))
 		rra(stack_a, 0);
-	else if (!ft_strncmp(line, "rrb", 3))
+	else if (!ft_strncmp(line, "rrb\n", 4))
 		rrb(stack_b, 0);
-	else if (!ft_strncmp(line, "rrr", 3))
+	else if (!ft_strncmp(line, "rrr\n", 4))
 		rrr(stack_a, stack_b, 0);
-	else if (!ft_strncmp(line, "rr", 2))
+	else if (!ft_strncmp(line, "rr\n", 3))
 		rr(stack_a, stack_b, 0);
 	else
 		ft_error(stack_a, stack_b);
